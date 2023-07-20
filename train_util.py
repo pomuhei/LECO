@@ -333,10 +333,19 @@ def get_add_time_ids(
 def get_optimizer(name: str):
     name = name.lower()
 
-    if name.startswith("dadapt"):
-        import dadaptation
+    if name.startswith("prodigy"):
+        import prodigyopt
 
-        if name == "dadaptadam":
+        if name == "prodigy":
+            print("#####   Use Prodigy optimizer   #####")
+            return prodigyopt.Prodigy
+        else:
+            raise ValueError("Prodigy optimizer must be prodigy")
+
+    elif name.startswith("dadapt"):
+         import dadaptation
+ 
+         if name == "dadaptadam":
             return dadaptation.DAdaptAdam
         elif name == "dadaptLion":
             return dadaptation.DAdaptLion
