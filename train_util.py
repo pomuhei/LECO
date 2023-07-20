@@ -347,9 +347,9 @@ def get_optimizer(name: str):
  
          if name == "dadaptadam":
             return dadaptation.DAdaptAdam
-        elif name == "dadaptLion":
+         elif name == "dadaptLion":
             return dadaptation.DAdaptLion
-        else:
+         else:
             raise ValueError("DAdapt optimizer must be dadaptadam or dadaptlion")
 
     elif name.endswith("8bit"):  # 検証してない
